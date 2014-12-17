@@ -28,8 +28,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Routes</h4> </div>
                 <div class="panel-body">
-                    <div class="list-group" ng-repeat="item in routelist">
-                        <a href="/routedetails/?id={{item.number}}" class="list-group-item"><span class="badge">{{item.number}}</span>{{item.name}}</a>
+                    <div class="list-group" ng-repeat="item in stoplist">
+                        <a href="/stopdetails/?stopid={{item.id}}&route={{item.routenumber}}&direction={{item.direction}}" class="list-group-item">{{item.name}}</a>
                     </div>
                 </div>
             </div>

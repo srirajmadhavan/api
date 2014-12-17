@@ -25,13 +25,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="btn-group btn-group-justified" ng-repeat="item in directions">
-                <a href="/stoplist?routenumber={{item.routeid}}&direction={{item.name}}" class="btn btn-info col-md-4">
-                    <i class="glyphicon glyphicon-map-marker"></i><br>
-                    {{item.name}}
-                </a>
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Times</h4> </div>
+                <div class="panel-body" ng-show="showlist">
+                    <div class="list-group" ng-repeat="item in etas">
+                        <a href="#" class="list-group-item">{{item.time}} <span class="badge">{{item.route}}</span></a>
+                    </div>
+                </div>
+                <p ng-hide="showlist">
+                    {{message}}
+                </p>
             </div>
         </div>
     </div>
 </div>
+
 <footer class="text-center">This Bootstrap 3 dashboard layout is compliments of <a href="http://www.bootply.com/85850"><strong>Bootply.com</strong></a></footer>

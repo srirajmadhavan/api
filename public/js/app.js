@@ -32,6 +32,11 @@ ami.config(function ($routeProvider, $locationProvider, localStorageServiceProvi
             controller: 'StopController'
         })
 
+        .when('/stopdetails', {
+            templateUrl: 'views/stopdetails.html',
+            controller: 'StopDetailController'
+        })
+
         .when('/favorite', {
             templateUrl: 'views/favorite.html',
             controller: 'FavoriteController'

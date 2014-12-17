@@ -2,7 +2,6 @@
 ami.controller('MainController', function ($scope, RouteService, UserService, localStorageService) {
 
     $scope.tagline = 'To the moon and back!';
-    debugger;
     var user = localStorageService.get('user');
     if (user)
     {
