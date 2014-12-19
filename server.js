@@ -11,12 +11,18 @@ var methodOverride = require('method-override');
 // config files
 var db = require('./config/db');
 
-var port = process.env.PORT || 8085; // set our port
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8085; // set our port
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+    db.url = process.env.OPENSHIFT_MONGODB_DB_URL + 'sleepy';
+}
+
 mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error')); 
+db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function callback() {
-    console.log('db opened sucessfully');  
+    console.log('db opened sucessfully');
 });
 
 // get all data/stuff of the body (POST) parameters
@@ -31,6 +37,7 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 require('./app/routes')(app); // pass our application into our routes
 
 // start app ===============================================
-app.listen(port);
-console.log('Magic happens on port ' + port); 			// shoutout to the user
+app.listen(server_port, server_ip_address, function () {
+    console.log("Listening on " + server_ip_address + ", server_port " + server_port)
+});
 exports = module.exports = app; 						// expose app

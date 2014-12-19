@@ -1,5 +1,5 @@
 'user strict';
-ami.factory('StopService', function ($http, $q, $resource) {
+ami.factory('StopService', function ($http, $q, $resource, poller) {
     return {
         getStops: function (routeNumber, direction) {
             var deferred = $q.defer();
@@ -22,6 +22,11 @@ ami.factory('StopService', function ($http, $q, $resource) {
                     deferred.reject(status);
                 });
             return deferred.promise;
+        },
+        getStopDetailsPolling: function (stopid, routenumber, direction) {
+            var myResource = $resource('/api/route/direction/stop/detail?stopid=' + stopid + '&route=' + routenumber + '&direction=' + direction);
+            var myPoller = poller.get(myResource);
+            return myPoller;
         }
     }
 });

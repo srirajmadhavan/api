@@ -1,6 +1,6 @@
 //angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService', 'GeekCtrl', 'GeekService']);
 
-var ami = angular.module('ami', ['ngRoute', 'ngResource', 'LocalStorageModule']);
+var ami = angular.module('ami', ['ngRoute', 'ngResource', 'LocalStorageModule','emguo.poller']);
 
 ami.config(function ($routeProvider, $locationProvider, localStorageServiceProvider) {
 
@@ -12,35 +12,41 @@ ami.config(function ($routeProvider, $locationProvider, localStorageServiceProvi
 		    controller: 'MainController'
 		})
 
-		.when('/search', {
-		    templateUrl: 'views/search.html',
-		    controller: 'SearchController'
+		.when('/bussearch', {
+		    templateUrl: 'views/bussearch.html',
+		    controller: 'BusSearchController'
 		})
 
-		.when('/list', {
-		    templateUrl: 'views/list.html',
-		    controller: 'ListController'
+		.when('/busroutelist', {
+		    templateUrl: 'views/busroutelist.html',
+		    controller: 'BusRouteListController'
 		})
 
-        .when('/routedetails', {
-            templateUrl: 'views/routedetails.html',
-            controller: 'RouteDetailsController'
+        .when('/busroutedetails', {
+            templateUrl: 'views/busroutedetails.html',
+            controller: 'BusRouteDetailsController'
         })
 
-        .when('/stoplist', {
-            templateUrl: 'views/stoplist.html',
-            controller: 'StopController'
+        .when('/busstoplist', {
+            templateUrl: 'views/busstoplist.html',
+            controller: 'BusStopController'
         })
 
-        .when('/stopdetails', {
-            templateUrl: 'views/stopdetails.html',
-            controller: 'StopDetailController'
+        .when('/busstopdetails', {
+            templateUrl: 'views/busstopdetails.html',
+            controller: 'BusStopDetailController'
         })
 
         .when('/favorite', {
             templateUrl: 'views/favorite.html',
             controller: 'FavoriteController'
+        })
+
+        .when('/userinfo', {
+            templateUrl: 'views/userinfo.html',
+            controller: 'UserInfoController'
         });
+
     $routeProvider.otherwise({ redirectTo: '/' });
     $locationProvider.html5Mode(true);
 

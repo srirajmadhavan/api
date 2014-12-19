@@ -1,72 +1,24 @@
-<link href="../css/landing.css" rel="stylesheet" />
-<style type="text/css">
-    html, body {
-        height: 100%;
-    }
-
-    h1 {
-        font-family: Arial,sans-serif font-size:80px;
-        color: #DDCCEE;
-    }
-
-    .lead {
-        color: #DDCCEE;
-    }
-
-
-    /* Custom container */
-    .container-full {
-        margin: 0 auto;
-        width: 100%;
-        min-height: 100%;
-        background-color: #110022;
-        color: #eee;
-        overflow: hidden;
-    }
-
-        .container-full a {
-            color: #efefef;
-            text-decoration: none;
-        }
-
-    .v-center {
-        margin-top: 7%;
-    }
-</style>
-
-<div class="container-full">
-    <div class="row">
-        <div class="col-lg-12 text-center v-center">
-            <h1>Home Page 4 Life</h1>
-            <p class="lead">{{ tagline }}</p>
-            <br><br><br>
-            <form class="col-lg-12" ng-hide="showjump">
-                <div class="input-group" style="width:340px;text-align:center;margin:0 auto;" ng-show="showemail">
-                    <input class="form-control input-lg" title="Don't worry. We hate spam, and will not share your email with anyone." ng-model="email" placeholder="Enter your email address" type="text">
-                    <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button" ng-click="submit()">OK</button></span>
-                </div>
-                <p class="lead">{{ callyou }}</p>
-                <div class="input-group" style="width:340px;text-align:center;margin:0 auto;" ng-show="showgetname">
-                    <input class="form-control input-lg" placeholder="Enter your name" ng-model="name" type="text">
-                    <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button" ng-click="submit(form)">OK</button></span>
-                </div>
-            </form>
-
-            <div class="panel panel-default col-lg-4 col-lg-offset-4" ng-show="showjump">
-                <div class="panel-heading"><div class="panel-title"><h4>Hello {{name}}</h4></div></div>
-                <div class="panel-body">
-                    <div class="col-md-4 text-center"><a href="/search"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive"></a></div>
-                    <div class="col-md-4 text-center"><a href="/list"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive"></a></div>
-                    <div class="col-md-4 text-center"><a href="/favorite"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive"></a></div>
+<div class="swiper-slide sliderbg_menu">
+    <div class="swiper-container swiper-nested">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slide-inner">
+                    <div class="logo"><a href="#"><h1><b>Go</b> Mobile</h1></a></div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="/"><img src="images/icons/about.png" alt="" title="" /><span>Login</span></a></li>
+                            <li><a href="/busroutelist"><img src="images/icons/tools.png" alt="" title="" /><span>Routes</span></a></li>
+                            <li><a href="/bussearch"><img src="images/icons/blog.png" alt="" title="" /><span>Search</span></a></li>
+                            <li><a href="/transitmaps"><img src="images/icons/docs.png" alt="" title="" /><span>Map</span></a></li>
+                            <li><a href="/busfavorites"><img src="images/icons/photos.png" alt="" title="" /><span>Favorites</span></a></li>
+                            <li><a href="#"><img src="images/icons/twitter.png" alt="" title="" /><span>Twitter</span></a></li>
+                            <li><a href="#"><img src="images/icons/contact.png" alt="" title="" /><span>Contact</span></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> <!-- /row -->
-    <div class="row">
-        <div class="col-lg-12 text-center v-center" style="font-size:39pt;">
-            <a href="#"><i class="icon-google-plus"></i></a> <a href="#"><i class="icon-facebook"></i></a>  <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-github"></i></a> <a href="#"><i class="icon-pinterest"></i></a>
-        </div>
+        <div class="swiper-scrollbar"></div>
     </div>
-    <br><br><br><br><br>
 </div>
-

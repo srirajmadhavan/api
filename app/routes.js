@@ -1,4 +1,4 @@
-var Nerd = require('./models/nerd');
+
 var Route = require('./models/route');
 var User = require('./models/user');
 var request = require('request');
