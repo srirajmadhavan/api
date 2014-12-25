@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 //var model = require('./app/models/nerd'); 
 
-// configuration ===========================================
+// configuration =========================================== tet
 
 // config files
 var db = require('./config/db');
